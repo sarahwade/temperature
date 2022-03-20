@@ -17,7 +17,7 @@ class Converter:
         # temp conversion heading (row 0)
         self.temp_converter_label = Label(self.converter_frame,
                                           text="Temperature Converter",
-                                          font="Arial 16 bold",
+                                          font="Garamond 16 bold",
                                           bg=background_color,
                                           padx=10, pady=10)
         self.temp_converter_label.grid(row=0)
@@ -37,18 +37,19 @@ class Converter:
                                       font="Ariel 14 bold")
         self.to_convert_entry.grid(row=2)
 
-        # conversion button frame (row 3), khaki=#c3b091 | orchid=#ff83fa
+        # conversion button frame (row 3), khaki1=#c3b091 | orchid=#ff83fa
         self.conversion_buttons_frame = Frame(self.converter_frame)
         self.conversion_buttons_frame.grid(row=3, pady=10)
 
         self.to_c_button = Button(self.conversion_buttons_frame,
-            text="To Centigrade", font="Arial 10 bold",
-            bg="Khaki1", padx=10, pady=10)
+                                  highlightbackground="Khaki1",
+                                  text="To Centigrade", font="Arial 10 bold",
+                                  padx=10, pady=10)
         self.to_c_button.grid(row=0, column=0)
 
         self.to_f_button = Button(self.conversion_buttons_frame,
-                                  text="To Fahrenheit", font="Arial 10 bold",
-                                  bg="#ff83fa", padx=10, pady=10)
+                                  text="To Fahrenheit", font="Garamond 10 bold",
+                                  highlightbackground="#ff83fa", padx=10, pady=10)
         self.to_f_button.grid(row=0, column=1)
 
         # answer label
@@ -62,11 +63,13 @@ class Converter:
         self.hist_help_frame.grid(row=5, pady=10)
 
         self.calc_hist_button = Button(self.hist_help_frame, font="Arial 12 bold",
-                                       text="Calculation History", width=15)
+                                       text="Calculation History", width=15,
+                                       padx=5, pady=5)
         self.calc_hist_button.grid(row=0, column=0)
 
         self.help_button = Button(self.hist_help_frame, font="Arial 12 bold",
-                                  text="Help", width=5)
+                                  text="Help", width=5,
+                                  padx=5, pady=5)
         self.help_button.grid(row=0, column=1)
 
     def help(self):
