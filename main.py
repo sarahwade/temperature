@@ -97,7 +97,7 @@ class Converter:
             elif low == -459 and to_convert >= low:
                 celsius = (to_convert * 5/9) - 32
                 to_convert = self.round_it(to_convert)
-                centigrade = self.round_it(celsius)
+                celsius = self.round_it(celsius)
                 answer = f"{to_convert} degrees F is {celsius} degrees C"
 
             else:
