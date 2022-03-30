@@ -69,6 +69,7 @@ class Converter:
 
         self.help_button = Button(self.hist_help_frame, font="Arial 12 bold",
                                   text="Help", width=15,
+                                  highlightbackground="#ffd580",
                                   padx=10, pady=10, command=self.help)
         # command help button set for history command for now, change later
         self.help_button.grid(row=0, column=0)
@@ -76,6 +77,7 @@ class Converter:
         # history button (column 1)
         self.history_button = Button(self.hist_help_frame, text="History",
                                      width=15, font="Arial 12 bold",
+                                     highlightbackground="#ffd580",
                                      padx=10, pady=10,
                                      command=lambda: self.history(self.all_calc_list))
         self.history_button.grid(row=0, column=1)
@@ -248,12 +250,14 @@ class History:
         # export button (row 3)
         self.export_button = Button(self.export_dismiss_frame, text="Export",
                                     padx=5, pady=5, font="arial 10 bold",
+                                    highlightbackground="#ffd580",
                                     command=lambda: self.export(calc_history))
         self.export_button.grid(row=0, column=0)
 
         # dismiss button (row 3)
         self.dismiss_btn = Button(self.export_dismiss_frame, text="Dismiss",
                                   width=10, bg='orange', font="arial 10 bold", padx=5, pady=5,
+                                  highlightbackground="#ffbb33",
                                   command=partial(self.close_history, partner))
         self.dismiss_btn.grid(row=0, column=1)
 
@@ -268,7 +272,7 @@ class History:
 
 class Export:
     def __init__(self, partner, calc_history):
-        background = "purple"
+        background = "#B19CD9"
 
         # disable export button
         partner.export_button.config(state=DISABLED)
@@ -330,12 +334,14 @@ class Export:
         # save and cancel buttons (row 0 of save_cancel frame)
         self.save_button = Button(self.save_cancel_frame, text="Save",
                                   font="Arial 14 bold", padx=5, pady=5,
+                                  highlightbackground="#ffbb33",
                                   command=partial(lambda: self.save_history(partner, calc_history)))
         self.save_button.grid(row=0, column=0)
 
         self.cancel_button = Button(self.save_cancel_frame, text="Cancel",
                                     font="Arial 14 bold",
                                     padx=5, pady=5,
+                                    highlightbackground= "#FFD580",
                                     command=partial(self.close_export, partner))
         self.cancel_button.grid(row=0, column=1)
 
