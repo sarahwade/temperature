@@ -305,7 +305,7 @@ class Export:
         self.export_text.grid(row=1)
 
         # export text (label, row 1)
-        self.export = Label(self.export_frame, text="If the filename "
+        self.export_text = Label(self.export_frame, text="If the filename "
                                                     "you enter below "
                                                     "already exists, "
                                                     "its contents will "
@@ -315,7 +315,7 @@ class Export:
                             justify=LEFT, bg="#FFAFAF",
                             fg="maroon", wrap=225, padx=10, pady=10,
                             font="arial 10 italic")
-        self.export_text.grid(row=1)
+        self.export_text.grid(row=2)
 
         # file name entry box (row 3)
         self.filename_entry = Entry(self.export_frame, width=20,
